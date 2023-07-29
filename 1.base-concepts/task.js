@@ -18,14 +18,14 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-	if (Number.isNaN(percent)||Number.isNaN(contribution)||Number.isNaN(amount)||Number.isNaN(countMonths)){
+	if (Number.isNaN(percent) || Number.isNaN(contribution) || Number.isNaN(amount) || Number.isNaN(countMonths)) {
 		return false
-	}else{
-    let P = percent/ 100 / 12;
-	let S = amount - contribution;
-	let n = countMonths ;
-    let payment = (S * (P + (P / (Math.pow ((1 + P),n) - 1))));
-    let totalSum = (payment * n).toFixed(2);
-    return parseFloat(totalSum);
-}
+	} else {
+		let P = percent / 100 / 12;
+		let S = amount - contribution;
+		let n = countMonths;
+		let payment = (S * (P + (P / (Math.pow((1 + P), n) - 1))));
+		let totalSum = (payment * n).toFixed(2);
+		return parseFloat(totalSum);
+	}
 }
