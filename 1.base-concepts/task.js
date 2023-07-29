@@ -21,11 +21,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	let P = percent / 100 / 12;
 	let S = amount - contribution;
 	let n = countMonths;
-	if (isNaN(percent)||isNaN(contribution)||isNaN(amount)||isNaN(countMonths)){
-		return false
-	} else {
     let payment = S * (P + (P / (((1 + P) ** n) - 1)));
 	let totalSum = (payment * n).toFixed(2);
-	   return parseFloat(totalSum);
-}
+	   return parseInt(totalSum);
 }
