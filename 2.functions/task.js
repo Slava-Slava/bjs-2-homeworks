@@ -1,8 +1,6 @@
 function getArrayParams(...arr) {
-//  let min = Infinity;
-//  let max = -Infinity;
-  let min = [0];
-  let max = [0];
+  let min = Infinity;
+  let max = -Infinity;
   let sum = 0;
   let avg = 0;
 
@@ -15,7 +13,7 @@ function getArrayParams(...arr) {
       }
           sum += arr[i];
   }
-  avg = parseInt(arr.length ? sum / arr.length:undefined.toFixed(2));
+  avg = parseFloat(arr.length ? sum / arr.length:undefined.toFixed(2));
   
   return { min: min, max: max, avg: avg };
 }
