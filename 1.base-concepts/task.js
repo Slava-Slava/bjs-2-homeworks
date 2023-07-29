@@ -12,7 +12,7 @@ function solveEquation(a, b, c) {
 	} else if (discriminant > 0) {
 		let root2 = (-b + Math.sqrt(discriminant)) / (2 * a);
 		let root3 = (-b - Math.sqrt(discriminant)) / (2 * a);
-		arr.push(root2,root3);
+		arr.push(root2, root3);
 		return arr;
 	}
 }
@@ -22,10 +22,10 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	let contribution = parseInt(contribution);
 	let amount = parseInt(amount);
 	let countMonths = parseInt(countMonths);
-	let P = percent/100/12;
+	let P = percent / 100 / 12;
 	let S = amount - contribution;
 	let n = countMonths;
-	let payment = S * (P + (P / (((1 + P)** n) - 1)));
+	let payment = S * (P + (P / (((1 + P) ** n) - 1)));
 	let totalSum = (payment * n).toFixed(2);
 	return totalSum;
 }
