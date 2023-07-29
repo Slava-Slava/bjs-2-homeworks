@@ -12,8 +12,7 @@ function solveEquation(a, b, c) {
 	} else if (discriminant > 0) {
 		let root2 = (-b + Math.sqrt(discriminant)) / (2 * a);
 		let root3 = (-b - Math.sqrt(discriminant)) / (2 * a);
-		arr.push(root2);
-		arr.push(root3)
+		arr.push(root2,root3);
 		return arr;
 	}
 }
