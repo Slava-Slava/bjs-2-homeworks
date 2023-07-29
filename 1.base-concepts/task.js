@@ -18,12 +18,12 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-	if (Number.isNaN(percent) || Number.isNaN(contribution) || Number.isNaN(amount) || Number.isNaN(countMonths)<0) {
+	if (Number.isNaN(percent) || Number.isNaN(contribution) || Number.isNaN(amount) || Number.isNaN(countMonths)) {
 		return false
 	} else {
-		let interestRate = percent / 100 / 12;
-		let loanBody = amount - contribution;
-		let months = countMonths;
+		let interestRate = parseInt(percent) / 100 / 12;
+		let loanBody = parseInt(amount) - parseInt(contribution);
+		let months = parseInt(countMonths);
 		let monthlyPayment = loanBody * (interestRate + (interestRate / (((1 + interestRate) ** months) - 1)))
 		let totalAmount = (monthlyPayment * countMonths).toFixed(2);
 		return parseInt(totalAmount);
