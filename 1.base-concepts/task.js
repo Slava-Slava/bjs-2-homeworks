@@ -10,9 +10,10 @@ function solveEquation(a, b, c) {
 		arr.push(root1);
 		return arr;
 	} else if (discriminant > 0) {
-		let root2 = (-b + Math.sqrt(d)) / (2 * a);
-		let root3 = (-b - Math.sqrt(d)) / (2 * a);
-		arr.push(root2, root3);
+		let root2 = (-b + Math.sqrt(discriminant)) / (2 * a);
+		let root3 = (-b - Math.sqrt(discriminant)) / (2 * a);
+		arr.push(root2);
+		arr.push(root2)
 		return arr;
 	}
 }
