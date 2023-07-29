@@ -18,6 +18,10 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
+	let percent = parseInt(percent);
+	let contribution = parseInt(contribution);
+	let amount = parseInt(amount);
+	let countMonths = parseInt(countMonths);
 	let P = percent/100/12;
 	let S = amount - contribution;
 	let n = countMonths;
