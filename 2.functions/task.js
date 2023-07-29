@@ -13,7 +13,7 @@ function getArrayParams(...arr) {
       }
           sum += arr[i];
   }
-  avg = parseFloat(arr.length ? sum / arr.length:undefined.toFixed(2));
+  avg = Number(sum/arr.length.toFixed(2));
   
   return { min: min, max: max, avg: avg };
 }
