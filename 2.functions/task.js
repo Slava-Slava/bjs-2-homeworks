@@ -1,10 +1,9 @@
 function getArrayParams(...arr) {
-  let sum = 0;
+	let sum = 0;
 	let avg = 0;
-  let max = Infinity;
-  let min = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
+	let max = -Infinity;
+	let min = Infinity;
+	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] > max) {
 			max = arr[i]
 		}
