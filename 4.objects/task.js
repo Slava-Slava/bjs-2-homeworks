@@ -20,7 +20,11 @@ Student.prototype.addMarks = function(...marks) {
 }
 
 Student.prototype.getAverage = function () {
-  
+	if (!this.marks) {
+		return 0;
+	} else {
+		return this.marks.reduce((acc, marks, index, arr) => acc + marks / arr.length,0);
+	}
 }
 
 Student.prototype.exclude = function (reason) {
