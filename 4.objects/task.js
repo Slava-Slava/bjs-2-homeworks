@@ -1,19 +1,22 @@
 function Student(name, gender, age) {
-    this.name=name;
-    this.gender=gender;
-    this.age=age;
-    this.marks=[];
+	this.name = name;
+	this.gender = gender;
+	this.age = age;
+	this.marks = [];
 
-  
 }
 
-Student.prototype.setSubject = function (subjectName) {
-    this.subject=subjectName;
-  
+Student.prototype.setSubject = function(subjectName) {
+	this.subject = subjectName;
+
 }
 
-Student.prototype.addMarks = function (...marks) {
-  
+Student.prototype.addMarks = function(...marks) {
+	if (!this.marks) {
+		return;
+	} else {
+		this.marks.push(...marks);
+	}
 }
 
 Student.prototype.getAverage = function () {
