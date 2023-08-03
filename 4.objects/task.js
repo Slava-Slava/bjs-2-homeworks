@@ -5,13 +5,11 @@ function Student(name, gender, age) {
 	this.marks = [];
 
 }
-
-Student.prototype.setSubject = function(subjectName) {
-	this.subject = subjectName;
-
+this.setSubject=function(subjectName){
+	this.subject=subjectName
 }
 
-Student.prototype.addMarks = function(...marks) {
+this.addMarks=function(...marks){
 	if (!this.marks) {
 		return;
 	} else {
@@ -19,15 +17,16 @@ Student.prototype.addMarks = function(...marks) {
 	}
 }
 
-Student.prototype.getAverage = function () {
-	if (!this.marks) {
+this.getAverage = function () {
+	if (!this.marks||this.marks.length) {
 		return 0;
 	} else {
-		return this.marks.reduce((acc, marks, index, arr) => acc + marks / arr.length,0);
+	const sum=this.marks.reduce((acc,curr)=>acc+curr);
+	return sum/this.marks.length;
 	}
 }
 
-Student.prototype.exclude = function (reason) {
+this.exclude = function (reason) {
 	delete this.subject;
 	delete this.marks;
 	this.excluded = reason;
