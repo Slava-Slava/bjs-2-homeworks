@@ -4,17 +4,17 @@ function Student(name, gender, age) {
 	this.age = age;
 	this.marks = [];
 
-}
+
 this.setSubject = function(subjectName) {
 	this.subject = subjectName
 }
 
-this.addMarks = function(...marksToAdd) {
+this.addMarks = function(...marks) {
 	if (!this.marks) {
 		return;
 	} else {
-		this.marks.push(...marksToAdd);
-	};
+		this.marks.push(...marks);
+	}
 }
 
 this.getAverage = function() {
@@ -23,11 +23,12 @@ this.getAverage = function() {
 	} else {
 		const sum = this.marks.reduce((acc, curr) => acc + curr);
 		return sum / this.marks.length;
-	};
+	}
 }
 
 this.exclude = function(reason) {
 	delete this.subject;
 	delete this.marks;
 	this.excluded = reason;
+}
 }
