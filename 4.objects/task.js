@@ -14,7 +14,7 @@ this.addMarks = function(...marksToAdd) {
 		return;
 	} else {
 		this.marks.push(...marksToAdd);
-	}
+	};
 }
 
 this.getAverage = function() {
@@ -23,7 +23,7 @@ this.getAverage = function() {
 	} else {
 		const sum = this.marks.reduce((acc, curr) => acc + curr);
 		return sum / this.marks.length;
-	}
+	};
 }
 
 this.exclude = function(reason) {
