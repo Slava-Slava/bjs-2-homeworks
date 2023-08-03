@@ -9,11 +9,11 @@ this.setSubject = function(subjectName) {
 	this.subject = subjectName
 }
 
-this.addMarks = function(...marks) {
+this.addMarks = function(...marksToAdd) {
 	if (!this.marks) {
 		return;
 	} else {
-		this.marks.push(...marks);
+		this.marks.push(...marksToAdd);
 	}
 }
 
