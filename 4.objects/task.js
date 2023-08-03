@@ -9,11 +9,11 @@ function Student(name, gender, age) {
 		this.subject = subjectName
 	}
 
-	this.addMarks = function(...marksToAdd) {
+	this.addMarks = function(...addMarks) {
 		if (!this.marks) {
 			return;
 		} else {
-			this.marks.push(...marksToAdd);
+			this.marks.push(...addMarks);
 		}
 	}
 
