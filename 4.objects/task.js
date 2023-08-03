@@ -18,7 +18,7 @@ function Student(name, gender, age) {
 	}
 
 	this.getAverage = function() {
-		if (!this.marks || this.marks.length) {
+		if (!this.marks || !this.marks.length) {
 			return 0;
 		} else {
 			const sum = this.marks.reduce((acc, curr) => acc + curr);
