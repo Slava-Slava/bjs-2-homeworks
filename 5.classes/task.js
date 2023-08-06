@@ -12,7 +12,7 @@ class PrintEditionItem {
 	set state(newCondition) {
 		if (newCondition < 0) {
 			this._state = 0;
-		} else if (newCondition > 0) {
+		} else if (newCondition > 100) {
 			this._state = 100;
 		} else {
 			this._state = newCondition
