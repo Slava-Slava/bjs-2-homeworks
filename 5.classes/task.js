@@ -74,39 +74,38 @@ class Library {
 	}
 	giveBookByName(bookName) {
 		for (let i = 0; i < this.books.length; i++) {
-//			const book = this.books[i];
-			if (this.books[i].name === bookName){
+			if (this.books[i].name === bookName) {
 				this.books.splice(i, 1);
-			return this.books[i];
+				return this.books[i];
+			}
 		}
+		return null;
 	}
-	return null;
- }
 }
 
-class Student {
-	constructor(name) {
-		this.name = name;
-		this.marks = {};
-	}
-	addMarks(mark, subject) {
-		if (mark < 2 || mark > 5) {
-			return;
-		}
-		if (!this.marks.hasOwnProperty(subject)) {
-			this.marks[subject] = [];
-		}
-		this.marks[subject].push(mark);
-	}
-
-	getAverageBySubject(subject) {
-		if (!this.marks.hasOwnProperty(subject)) {
-			return 0;
-		}
-		return this.marks[subject].reduce((acc, mark) => acc + mark / this.marks[subject].length, 0); //формула нахождения средних элементов
-	}
-	getAverage() {
-		const subjects = Object.keys(this.marks);
-		return subjects.reduce((acc, subject) => acc + this.getAverageBySubject(subject)/subjects.length, 0);
-	}
-}
+//class Student {
+//	constructor(name) {
+//		this.name = name;
+//		this.marks = {};
+//	}
+//	addMark(mark, subject) {
+//		if (mark < 2 || mark > 5) {
+//			return;
+//		}
+//		if (!this.marks.hasOwnProperty(subject)) {
+//			this.marks[subject] = [];
+//		}
+//		this.marks[subject].push(mark);
+//	}
+//
+//	getAverageBySubject(subject) {
+//		if (!this.marks.hasOwnProperty(subject)) {
+//			return 0;
+//		}
+//		return this.marks[subject].reduce((acc, mark) => acc + mark / this.marks[subject].length, 0); ///формула нахождения средних элементов
+//	}
+//	getAverage() {
+//		const subjects = Object.keys(this.marks);
+//		return subjects.reduce((acc, subject) => acc + this.getAverageBySubject(subject) / subjects.length, 0);
+//	}
+//}
