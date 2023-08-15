@@ -50,7 +50,7 @@ class FantasticBook extends Book {
 }
 class DetectiveBook extends Book {
 	constructor(author, name, releaseDate, pagesCount, ) {
-		super(author, name, releaseDate, pagesCount,);
+		super(author, name, releaseDate, pagesCount, );
 		this.type = 'detective';
 	}
 }
@@ -65,16 +65,45 @@ class Library {
 		}
 	}
 	findBookBy(type, value) {
-		for (let i = 0; i < this.books.length; i++) {
-			if (this.books[i][type] === value) return this.books[i];
+		for (const book of this.books) {
+			if (book[type] === value) {
+				return book;
+			}
 		}
 		return null;
 	}
 	giveBookByName(bookName) {
 		for (let i = 0; i < this.books.length; i++) {
-			if (this.books[i].name === bookName) return this.books.splice([i], 1)[0];
+			if (this.books[i].name === bookName)
+				this.books.splice(i, 1);
+			return this.book;
 		}
 		return null;
+	}
+}
+class Student {
+	constructor(name) {
+		this.name = name;
+		this.marks = {};
+	}
+	addMarks(mark, subject) {
+		if (mark < 2 || mark > 5) {
+			return;
+		}
+		if (!this.marks.hasOwnProperty(subject)) {
+			this.marks[subject] = [];
+		}
+		this.marks[subject].push(mark);
+	}
 
+	getAverageBySubject(subject) {
+		if (!this.marks.hasOwnProperty(subject)) {
+			return 0;
+		}
+		return this.marks[subject].reduce((acc, mark) => acc + mark / this.marks[subject].length, 0); //формула нахождения средних элементов
+	}
+	getAverage() {
+		const subjects = Object.keys(this.marks);
+		return subjects.reduce((acc, subject) => acc + this.getAverageBySubject(subject)/subjects.length, 0);
 	}
 }
