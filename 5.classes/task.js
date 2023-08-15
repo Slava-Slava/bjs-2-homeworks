@@ -76,7 +76,7 @@ class Library {
 		for (let i = 0; i < this.books.length; i++) {
 			if (this.books[i].name === bookName)
 				this.books.splice(i, 1);
-			return this.book;
+			return this.book[i];
 		}
 		return null;
 	}
